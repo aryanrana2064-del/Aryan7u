@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard — ARYAN VX7</title>
+<meta name="description" content="Your ARYAN VX7 client dashboard — manage projects and get support." />
+<meta name="robots" content="noindex" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+</head>
+<body data-page="dashboard">
+
+<div id="loading-screen">
+  <div class="loader-mark">ARYAN VX7</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<canvas id="particle-canvas"></canvas>
+<div class="grid-overlay"></div>
+
+<header class="navbar">
+  <div class="container">
+    <a href="index.html" class="brand">ARYAN <span>VX7</span></a>
+    <nav class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#why-us">Why Us</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="user-chip visible" id="user-chip">
+        <img id="user-chip-avatar" src="" alt="" />
+        <span id="user-chip-name"></span>
+      </div>
+      <button class="btn btn-outline" id="sign-out-btn">SIGN OUT</button>
+    </div>
+  </div>
+</header>
+
+<!-- Shown while auth state resolves / before redirect -->
+<div class="auth-gate" id="auth-gate">Checking your session…</div>
+
+<main class="dash-shell" id="dashboard-content" style="display: none;">
+  <div class="container">
+
+    <div class="welcome-card glass reveal">
+      <img id="dash-avatar" src="" alt="" />
+      <div>
+        <h1 id="dash-name">Welcome back</h1>
+        <p id="dash-email"></p>
+      </div>
+    </div>
+
+    <div class="stats-row reveal-stagger reveal">
+      <div class="stat-card glass">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Active Projects</div>
+      </div>
+      <div class="stat-card glass">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Completed</div>
+      </div>
+      <div class="stat-card glass">
+        <div class="stat-value">24/7</div>
+        <div class="stat-label">Support</div>
+      </div>
+    </div>
+
+    <div class="actions-grid reveal-stagger reveal">
+      <div class="action-card glass">
+        <h3>📁 My Projects</h3>
+        <p>Track progress on everything we're building for you.</p>
+      </div>
+      <div class="action-card glass">
+        <h3>💬 Client Support</h3>
+        <p>Reach the team directly whenever you need help.</p>
+      </div>
+      <div class="action-card glass">
+        <h3>📊 Analytics</h3>
+        <p>See how your website is performing, once it's live.</p>
+      </div>
+    </div>
+
+    <div class="dash-cta glass reveal">
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Have a new idea?</h2>
+      <p style="color: var(--color-text-muted); margin-bottom: 1.25rem;">Tell us what you need and we'll get started.</p>
+      <button class="btn btn-primary" id="request-project-btn">🚀 REQUEST NEW PROJECT</button>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/firebase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
