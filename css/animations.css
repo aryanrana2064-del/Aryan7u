@@ -1,0 +1,120 @@
+/* ============================================
+   ARYAN VX7 — Animations
+   ============================================ */
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px -4px rgba(212,168,67,0.35); }
+  50% { box-shadow: 0 0 45px -4px rgba(212,168,67,0.65); }
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes floatParticle {
+  0% { transform: translate3d(0,0,0); opacity: 0.2; }
+  50% { opacity: 0.8; }
+  100% { transform: translate3d(0,-40px,0); opacity: 0.2; }
+}
+@keyframes ripple-anim {
+  to { transform: scale(3); opacity: 0; }
+}
+@keyframes blinkDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+@keyframes loaderFill {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---------- Applied classes ---------- */
+.loader-bar-fill { animation: loaderFill 1.6s var(--ease-out) forwards; }
+
+.hero-badge { animation: fadeIn 0.8s var(--ease-out) both; }
+.hero h1 { animation: fadeInUp 0.9s 0.1s var(--ease-out) both; }
+.hero-subtitle { animation: fadeInUp 0.9s 0.25s var(--ease-out) both; }
+.hero-actions { animation: fadeInUp 0.9s 0.4s var(--ease-out) both; }
+.laptop-scene { animation: scaleIn 1s 0.3s var(--ease-out) both; }
+
+.laptop { animation: floatY 6s ease-in-out infinite; }
+.chip-mobile { animation: floatY 5s ease-in-out infinite; animation-delay: 0.4s; }
+.chip-desktop { animation: floatY 5.5s ease-in-out infinite; animation-delay: 0.8s; }
+
+.laptop-screen { animation: glowPulse 4.5s ease-in-out infinite; }
+
+.cta-blink { animation: blinkDot 1.3s ease-in-out infinite; }
+
+.mock-line {
+  background-size: 200% 100%;
+  animation: shimmer 2.6s linear infinite;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.in-view > * {
+  animation: fadeInUp 0.7s var(--ease-out) both;
+}
+.reveal-stagger.in-view > *:nth-child(1) { animation-delay: 0s; }
+.reveal-stagger.in-view > *:nth-child(2) { animation-delay: 0.08s; }
+.reveal-stagger.in-view > *:nth-child(3) { animation-delay: 0.16s; }
+.reveal-stagger.in-view > *:nth-child(4) { animation-delay: 0.24s; }
+.reveal-stagger.in-view > *:nth-child(5) { animation-delay: 0.32s; }
+.reveal-stagger.in-view > *:nth-child(6) { animation-delay: 0.4s; }
+
+/* ---------- Toast entrance ---------- */
+.toast { animation: slideInRight 0.4s var(--ease-out) both; }
+
+/* ---------- Tilt effect (JS sets transform inline via CSS var) ---------- */
+.tilt {
+  transform: perspective(800px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.15s ease-out;
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .laptop, .chip-mobile, .chip-desktop { animation: none !important; }
+}

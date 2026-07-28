@@ -1,0 +1,68 @@
+/* ============================================
+   ARYAN VX7 — Responsive
+   ============================================ */
+
+/* 1400px+ : Large Desktop */
+@media (min-width: 1400px) {
+  .container { max-width: 1320px; }
+}
+
+/* 1200px : Desktop (default styles target this) */
+@media (max-width: 1200px) {
+  .container { padding: 0 var(--space-lg); }
+  .hero .container { gap: var(--space-lg); }
+}
+
+/* 992px : Tablet Landscape */
+@media (max-width: 992px) {
+  .nav-links { display: none; }
+  .hero .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-subtitle { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .laptop-scene { margin-top: var(--space-lg); }
+  .chip-mobile, .chip-desktop { display: none; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-us { grid-template-columns: 1fr; }
+  .why-visual { order: -1; max-width: 340px; margin: 0 auto; }
+  .stats-row, .actions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* 768px : Tablet Portrait */
+@media (max-width: 768px) {
+  :root { --nav-height: 68px; }
+  .section { padding: var(--space-xl) 0; }
+  .services-grid { grid-template-columns: 1fr; }
+  .footer-bar { flex-direction: column; align-items: flex-start; }
+  .welcome-card { flex-direction: column; text-align: center; }
+  .stats-row { grid-template-columns: 1fr; }
+  .actions-grid { grid-template-columns: 1fr; }
+  .grid-overlay { display: none; }
+}
+
+/* 576px : Large Mobile */
+@media (max-width: 576px) {
+  .container { padding: 0 var(--space-sm); }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1rem; }
+  .btn { width: 100%; }
+  .hero-actions { flex-direction: column; }
+  .cta-box { padding: var(--space-lg) var(--space-sm); }
+  .brand { font-size: 1.1rem; }
+  #toast-container { left: 16px; right: 16px; bottom: 16px; }
+  .toast { min-width: 0; }
+}
+
+/* 320px : Small Mobile */
+@media (max-width: 340px) {
+  .hero h1 { font-size: 1.85rem; }
+  .laptop { max-width: 280px; }
+  .welcome-card img { width: 60px; height: 60px; }
+}
+
+/* Hide custom cursor on touch devices (also handled in style.css) */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}
