@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ARYAN VX7 — Premium Web Design & Development</title>
+<meta name="description" content="ARYAN VX7 builds modern, fast and responsive websites designed to convert. Custom web design, e-commerce, landing pages, redesigns and UI/UX for growing businesses." />
+<meta name="keywords" content="web design, web development, landing page design, e-commerce website, UI UX design, ARYAN VX7" />
+<meta name="author" content="ARYAN VX7" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="ARYAN VX7 — Premium Web Design & Development" />
+<meta property="og:description" content="Modern, fast & responsive websites designed to convert." />
+<meta property="og:type" content="website" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+
+<!-- Firebase (Compat SDK) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+</head>
+<body data-page="landing">
+
+<!-- Loading screen -->
+<div id="loading-screen">
+  <div class="loader-mark">ARYAN VX7</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<canvas id="particle-canvas"></canvas>
+<div class="grid-overlay"></div>
+
+<!-- Navbar -->
+<header class="navbar">
+  <div class="container">
+    <a href="#top" class="brand">ARYAN <span>VX7</span></a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <div class="user-chip" id="user-chip">
+        <img id="user-chip-avatar" src="" alt="" />
+        <span id="user-chip-name"></span>
+      </div>
+      <button class="btn btn-primary" id="get-started-btn" data-auth-trigger>GET STARTED</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-copy">
+      <span class="hero-badge eyebrow">✦ Premium Web Solutions ✦</span>
+      <h1>WE BUILD <span class="accent">WEBSITES</span> THAT GROW YOUR BUSINESS</h1>
+      <p class="hero-subtitle">Modern, Fast &amp; Responsive Websites Designed to Convert.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-auth-trigger>GET STARTED</button>
+        <a href="#services" class="btn btn-outline">View Services</a>
+      </div>
+    </div>
+
+    <div class="laptop-scene">
+      <div class="floating-chip glass chip-mobile">📱 Mobile Ready</div>
+      <div class="floating-chip glass chip-desktop">🖥️ Desktop Optimized</div>
+      <div class="laptop">
+        <div class="laptop-screen">
+          <div class="laptop-screen-inner">
+            <div class="mock-topbar"><span></span><span></span><span></span></div>
+            <div class="mock-body">
+              <div class="mock-line w60"></div>
+              <div class="mock-line w40"></div>
+              <div class="mock-block"></div>
+              <div class="mock-line w80"></div>
+              <div class="mock-line w40"></div>
+            </div>
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2>Services Built to Convert</h2>
+      <p>End-to-end web solutions tailored to your business goals.</p>
+    </div>
+
+    <div class="services-grid reveal-stagger reveal">
+      <div class="service-card glass">
+        <div class="service-icon">🎨</div>
+        <h3>Custom Website Design</h3>
+        <p>Bespoke designs crafted around your brand, not a template.</p>
+      </div>
+      <div class="service-card glass">
+        <div class="service-icon">🛒</div>
+        <h3>E-commerce Development</h3>
+        <p>Storefronts built to convert visitors into paying customers.</p>
+      </div>
+      <div class="service-card glass">
+        <div class="service-icon">🚀</div>
+        <h3>Landing Page Design</h3>
+        <p>High-converting single pages for campaigns and launches.</p>
+      </div>
+      <div class="service-card glass">
+        <div class="service-icon">🔄</div>
+        <h3>Website Redesign &amp; Optimization</h3>
+        <p>Give your existing site a faster, sharper, modern edge.</p>
+      </div>
+      <div class="service-card glass">
+        <div class="service-icon">✨</div>
+        <h3>UI/UX Design</h3>
+        <p>Interfaces people enjoy using, backed by clear user flows.</p>
+      </div>
+      <div class="service-card glass">
+        <div class="service-icon">📱</div>
+        <h3>Mobile-Responsive Development</h3>
+        <p>Pixel-perfect experiences on every screen size, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why us -->
+<section class="section" id="why-us">
+  <div class="container why-us">
+    <div class="why-visual reveal">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <span class="core">VX7</span>
+    </div>
+
+    <div class="reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2 style="margin-top: 0.75rem; font-size: clamp(1.8rem, 3.5vw, 2.4rem); background: var(--grad-gold); -webkit-background-clip: text; background-clip: text; color: transparent;">A Studio That Delivers</h2>
+      <ul class="why-list" style="margin-top: 1.5rem;">
+        <li>
+          <span class="why-check">✓</span>
+          <div class="why-copy"><h4>Pixel-Perfect Design</h4><p>Every detail refined, from spacing to typography.</p></div>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <div class="why-copy"><h4>Fast Loading Speed</h4><p>Optimized builds that keep visitors from bouncing.</p></div>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <div class="why-copy"><h4>SEO-Friendly Structure</h4><p>Built to be found, not just built to look good.</p></div>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <div class="why-copy"><h4>Affordable Pricing</h4><p>Premium quality without the premium markup.</p></div>
+        </li>
+        <li>
+          <span class="why-check">✓</span>
+          <div class="why-copy"><h4>Ongoing Support</h4><p>We stick around after launch — real help, real fast.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box reveal">
+      <h2>GET YOUR WEBSITE TODAY</h2>
+      <p style="color: var(--color-text-muted);">Let's build something that actually moves the needle for your business.</p>
+      <div style="margin-top: 1.5rem;">
+        <button class="btn btn-primary" data-auth-trigger>GET YOUR WEBSITE TODAY</button>
+      </div>
+      <div class="cta-blink">⚡ DM NOW — LIMITED SLOTS AVAILABLE</div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-bar glass">
+      <div class="footer-links">
+        <a href="https://wa.me/919286928539" target="_blank" rel="noopener">💬 WhatsApp +91 9286928539</a>
+        <a href="tel:+919105315121">📞 Call +91 9105315121</a>
+        <a href="https://instagram.com/aryan.vx7" target="_blank" rel="noopener">📷 Instagram @aryan.vx7</a>
+        <a href="https://t.me/BYTEFURY_02" target="_blank" rel="noopener">✈️ Telegram @BYTEFURY_02</a>
+      </div>
+      <span class="footer-copy">© 2026 ARYAN VX7. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/firebase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
